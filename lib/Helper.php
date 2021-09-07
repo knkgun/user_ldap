@@ -197,6 +197,7 @@ class Helper {
 		}
 
 		if (isset($param['hasBeenHandled']) && $param['hasBeenHandled']) {
+			// if the event has been handled already, ignore it
 			return;
 		}
 
@@ -212,7 +213,7 @@ class Helper {
 		$uid = $userBackend->loginName2UserName($param['uid']);
 		if ($uid !== false) {
 			$param['uid'] = $uid;
-			$param['hasBeenHandled'] = true;
+			$param['hasBeenHandled'] = true;  // mark the event as handled
 		}
 	}
 
